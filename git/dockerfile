@@ -10,6 +10,6 @@ RUN apt install python3-pytest - y
 
 RUN git clone -b {GIT_BRANCH} {GIT_REPO}
 
-COPY . ./testDemo
+COPY . ./demoTest
 
-ENTRYPOINT [ "/testDemo/entrypoint.sh" ]
+ENTRYPOINT [ "/demoTest/entrypointfile.sh" ]
