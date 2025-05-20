@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+ARG GIT_REPO
+ARG GIT_BRANCH
+
+RUN apt update
+RUN apt install python3 -y \ &&
+RUN apt install python3-pip -y \ &&
+RUN apt install python3-pytest - y 
+
+RUN git clone -b {GIT_BRANCH} {GIT_REPO}
+
+COPY . ./testDemo
+
+ENTRYPOINT [ "/testDemo/entrypoint.sh" ]
